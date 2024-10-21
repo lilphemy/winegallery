@@ -1,8 +1,8 @@
 /** @type {import('tailwindcss').Config} */
 export default {
   content: [
-    './components/headerbar.tsx',
-    './components/searchbar.tsx',
+    './src/components/headerbar.tsx',
+    './src/components/searchbar.tsx',
   ],
   theme: {
     extend: {},

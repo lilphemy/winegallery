@@ -1,30 +1,35 @@
-import { useState, useEffect, createContext, ReactNode } from "react";
+import React, { useState, useEffect, createContext, ReactNode } from "react";
 
 
-const link = 'https://broadway-wine.p.rapidapi.com/'
+const link = 'https://the-cocktail-db3.p.rapidapi.com/'
 
 const options = {
     'method': 'GET',
     headers: {
-        'x-rapidapi-key': '05e39e5af1msh568d42a782b9dacp1cc295jsnfba2c2b99283',
-        'x-rapidapi-host': 'broadway-wine.p.rapidapi.com',
-    }
+		'x-rapidapi-key': '05e39e5af1msh568d42a782b9dacp1cc295jsnfba2c2b99283',
+		'x-rapidapi-host': 'the-cocktail-db3.p.rapidapi.com'
+	}
 }
 
+interface dataBucket {
+    wineData: ({id: string, title: string, difficulty: string, image: string})[],
+    //setWineData?: () => React.Dispatch<React.SetStateAction<never[]>
+}
 
-const DataProvider = createContext([])
+export const ResProvider = createContext<dataBucket>({
+    wineData: [],
+})
 
 const ContextContainer = ({ children }: { children: ReactNode }) => {
 
     const [wineData, setWineData] = useState([])
-
 
     const datareach = async (urllink: string) => {
         try {
             const res = await fetch(urllink, options)
             const data = await res.json()
             console.log(data)
-
+            setWineData(data)
         }catch(err){
             console.log(err)
         }
@@ -35,9 +40,9 @@ const ContextContainer = ({ children }: { children: ReactNode }) => {
     }, [])
 
     return (
-        <DataProvider.Provider value={wineData}>
+        <ResProvider.Provider value={{wineData}}>
             {children}
-        </DataProvider.Provider>
+        </ResProvider.Provider>
     )
 }
 
