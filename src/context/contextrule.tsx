@@ -1,4 +1,4 @@
-import React, { useState, useEffect, createContext, ReactNode } from "react";
+import { useState, createContext, ReactNode, useLayoutEffect } from "react";
 
 
 const link = 'https://the-cocktail-db3.p.rapidapi.com/'
@@ -28,16 +28,15 @@ const ContextContainer = ({ children }: { children: ReactNode }) => {
         try {
             const res = await fetch(urllink, options)
             const data = await res.json()
-            console.log(data)
             setWineData(data)
         }catch(err){
             console.log(err)
         }
     }
 
-    useEffect(() => {
-        datareach(link)
-    }, [])
+    useLayoutEffect(() => {
+        //datareach(link)
+    }, [link])
 
     return (
         <ResProvider.Provider value={{wineData}}>

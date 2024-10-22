@@ -1,6 +1,7 @@
 import {Component} from 'react'
-import Heading from './headerbar'
 import ContextContainer from '../context/contextrule'
+import Heading from './headerbar'
+import Searchbar from './searchbar'
 
 
 class HomeSegment extends Component {
@@ -10,6 +11,7 @@ class HomeSegment extends Component {
         return (
             <ContextContainer>
                 <Heading/>
+                <Searchbar/>
             </ContextContainer>
         )
     }

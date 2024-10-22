@@ -4,13 +4,12 @@ import {ResProvider} from '../context/contextrule'
 
 
 const BodyViews = function () {
+
     const {wineData} = useContext(ResProvider)
 
     return (
         <Fragment>
             {wineData.map((unitwine) => {
-                console.log(unitwine)
-
                 return(
                     <Fragment>
 
