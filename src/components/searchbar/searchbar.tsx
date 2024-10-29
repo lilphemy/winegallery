@@ -1,7 +1,6 @@
 import { Fragment } from "react";
 import Class from './searchbar.module.css'
 
-
 const Searchbar = () => {
 
     return (
@@ -12,7 +11,6 @@ const Searchbar = () => {
                         <input placeholder="search item" type="search" name="search" id="search" />
                         <button type="button">search cocktails</button>
                     </div>
-
                 </form>
             </div>
         </Fragment>

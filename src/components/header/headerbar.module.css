@@ -2,6 +2,7 @@ body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    background-color:  hsl(0, 56%, 98%);
 }
 
 .mainHeader{
@@ -9,7 +10,7 @@ body {
     padding: auto 1rem;
     width: 100%;
     border: 5px 4px solid lightgreen;
-    background-color: hsl(0, 56%, 98%);
+    background-color: white;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -22,7 +23,7 @@ body {
     font-size: 1.5rem;
     font-family: 'Times New Roman', Times, serif;
     text-transform: uppercase;
-    color: rgb(49, 186, 49)
+    color: cornflowerblue
 }
 
 .headSections {
