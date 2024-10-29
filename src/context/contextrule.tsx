@@ -17,7 +17,7 @@ export const ResProvider = createContext<dataBucket>({
 })
 
 const ContextContainer = ({ children }: { children: ReactNode }) => {
-    const [searchKey, setSearchKey] = useState('b')
+   const searchKey = 'b'
     const [wineData, setWineData] = useState([])
 
     const getDrinks = useCallback( async (urlink: string) => {
@@ -25,6 +25,7 @@ const ContextContainer = ({ children }: { children: ReactNode }) => {
         try{
             const fetchDrinks = await fetch(`${urlink}${searchKey}`, options)
             const data = await fetchDrinks.json()
+            
             setWineData(data.drinks)
         }catch(err){
         }

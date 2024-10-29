@@ -1,10 +1,7 @@
-import { useContext, Fragment } from "react";
+import { useContext } from "react";
 import { ResProvider } from '../../context/contextrule'
 import Class from './bodydisplay.module.css'
 
-interface objectBuild {
-
-}
 
 const BodyViews = function () {
 
