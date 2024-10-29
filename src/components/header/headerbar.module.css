@@ -1,0 +1,48 @@
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.mainHeader{
+    margin: 0;
+    padding: auto 1rem;
+    width: 100%;
+    border: 5px 4px solid lightgreen;
+    background-color: hsl(0, 56%, 98%);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.headTitle {
+    text-align: center;
+    width: 30%;
+    font-weight: 900;
+    font-size: 1.5rem;
+    font-family: 'Times New Roman', Times, serif;
+    text-transform: uppercase;
+    color: rgb(49, 186, 49)
+}
+
+.headSections {
+    width: 50%;
+}
+
+.headUrls {
+    max-width: 800%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.headUrls > li {
+    margin: 15px auto;
+    list-style: none;
+    text-decoration: none;
+    cursor: pointer;
+    font-weight: 400;
+    align-self: center;
+    color: cornflowerblue;
+}
