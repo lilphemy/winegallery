@@ -16,13 +16,11 @@ const Searchbar = () => {
         }catch(err) {
             return err
         }
-    }, [])
+    }, [searchlink, searchValue])
 
     const handleSearch = function (e: React.MouseEvent<HTMLButtonElement>  ) {
         e.preventDefault()
-        useEffect(() => {
-            fetchCocktail(searchlink, searchValue)
-        }, [searchValue]);
+        fetchCocktail(searchlink, searchValue)
         setSearchValue('')
     }
 
