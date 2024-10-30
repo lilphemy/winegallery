@@ -1,17 +1,13 @@
 import React, { useState, createContext, ReactNode, useLayoutEffect, useCallback } from "react";
 
-
 const link = 'https://www.thecocktaildb.com/api/json/v1/1/search.php?s='
-
-
-
 
 const options = {
     'method': 'GET',
 }
 
 type dataSet = {
-    strAlcohollic: string,
+    strAlcoholic: string,
     strDrinkThumb: string,
     strCategory: string,
     strDrink: string,
@@ -56,7 +52,7 @@ const ContextContainer = ({ children }: { children: ReactNode }) => {
     useLayoutEffect(() => {
         getDrinks(link)
     }, [searchKey, link])
-    console.log(wineData)
+
     return (
         <ResProvider.Provider value={{wineData, setWineData}}>
             {children}

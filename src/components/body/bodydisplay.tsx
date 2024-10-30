@@ -11,7 +11,6 @@ const BodyViews = function () {
         <section className={Class.gridView}>
             {wineData.map((unitwine) => {
                 const { strAlcoholic, strDrink, strGlass, strDrinkThumb } = unitwine
-
                 return (
                     <div className={Class.divBlock}>
                         <div className={Class.imgStyle}>

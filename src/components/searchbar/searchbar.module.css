@@ -30,6 +30,7 @@
     padding: 8px;
     width: 230px;
     outline: none;
+    border: 1px double hsla(220, 40%, 30%, .2);
 }
 
 .inputSec > button {
