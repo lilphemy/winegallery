@@ -1,6 +1,6 @@
 import {Component, StrictMode} from 'react'
 import ReactDom from 'react-dom/client'
-import Maindisplay from './App'
+import Maindisplay from './app'
 
 
 
