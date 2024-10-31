@@ -1,4 +1,4 @@
-import React, { Fragment, useCallback, useContext, useEffect, useState} from "react";
+import React, { Fragment, useCallback, useContext, useState} from "react";
 import Class from './searchbar.module.css'
 import { ResProvider } from "../../context/contextrule";
 
@@ -12,6 +12,7 @@ const Searchbar = () => {
         try{
             const pullData = await fetch(`${searchlink} ${id_name}`, {method: "GET"})
             const data = await pullData.json()
+            console.log(data.drinks)
             setWineData?.(data.drinks)
         }catch(err) {
             return err

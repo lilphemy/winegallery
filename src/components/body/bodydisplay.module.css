@@ -2,7 +2,7 @@
 .gridView {
     box-sizing: content-box;
     display: grid;
-    grid-template-columns: repeat(3, 350px);
+    grid-template-columns: repeat(3, 20rem);
     justify-content: space-evenly;
     align-items: center;
     background-color:  hsl(0, 56%, 98%);
@@ -23,8 +23,8 @@
 }
 
 img {
-    height: 250px;
-    width: 100%;
+    height: inherit;
+    width: inherit;
     border-top-right-radius: 4px;
     border-top-left-radius: 4px;
 }
@@ -46,6 +46,7 @@ img {
     outline: none;
     border: none;
     text-transform: capitalize;
+    border-radius: 5px;
 }
 
 .glassText {
