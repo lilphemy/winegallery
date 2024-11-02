@@ -16,12 +16,15 @@ type dataSet = {
     strIngredient2?: string,
     strIngredient3?: string,
     strIngredient4?: string,
+    idDrink: string,
 };
 
 
 interface dataBucket {
     wineData: (dataSet)[],
     setWineData?: React.Dispatch<React.SetStateAction<(dataSet)[]>>;
+    setSearchKey?: React.Dispatch<React.SetStateAction<string>>
+    searchKey?: string;
 }
 
 // context provider
@@ -35,11 +38,10 @@ export const ResProvider = createContext<dataBucket>({
 
 
 const ContextContainer = ({ children }: { children: ReactNode }) => {
-   const searchKey = 'b'
+   const [searchKey, setSearchKey] = useState("f")
     const [wineData, setWineData] = useState<(dataSet)[]>([])
     
     const getDrinks = useCallback( async (urlink: string) => {
-
         try{
             const fetchDrinks = await fetch(`${urlink}${searchKey}`, options)
             const data = await fetchDrinks.json()
@@ -54,7 +56,7 @@ const ContextContainer = ({ children }: { children: ReactNode }) => {
     }, [searchKey, link])
 
     return (
-        <ResProvider.Provider value={{wineData, setWineData}}>
+        <ResProvider.Provider value={{wineData, setWineData,searchKey, setSearchKey}}>
             {children}
         </ResProvider.Provider>
     )

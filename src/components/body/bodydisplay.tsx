@@ -8,9 +8,9 @@ const BodyViews = function () {
   return (
     <section className={Class.gridView}>
       {wineData.map((unitwine) => {
-        const { strAlcoholic, strDrink, strGlass, strDrinkThumb } = unitwine;
+        const { strAlcoholic, strDrink, strGlass, strDrinkThumb, idDrink } = unitwine;
         return (
-          <div className={Class.divBlock}>
+          <div key = {idDrink} className={Class.divBlock}>
             <img src={strDrinkThumb} />
             <div className = {Class.divDesc}>
               <h1>{strDrink}</h1>
